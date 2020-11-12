@@ -1,9 +1,7 @@
 syntax on
-
-set guicursor=
-set relativenumber
-set nohlsearch
-set hidden
+imap jj <Esc>
+let mapleader = ""
+filetype plugin indent on
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -17,6 +15,20 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
+set encoding=utf-8
+syntax on
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+set cursorline
+set undofile
+hi CursorLine cterm=none
+set guicursor=
+set relativenumber
+set nohlsearch
+set hidden
+
+
+
 set termguicolors
 set scrolloff=8
 set noshowmode
@@ -38,38 +50,6 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 call plug#begin('~/.vim/plugged')
 
 " Neovim lsp Plugins
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
-Plug 'tjdevries/nlua.nvim'
-
-Plug 'tweekmonster/gofmt.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-utils/vim-man'
-Plug 'mbbill/undotree'
-Plug 'sheerun/vim-polyglot'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'stsewd/fzf-checkout.vim'
-Plug 'vuciv/vim-bujo'
-Plug 'tpope/vim-dispatch'
-Plug '/home/mpaulson/personal/vim-apm'
-Plug 'theprimeagen/vim-be-good'
-Plug 'gruvbox-community/gruvbox'
-
-" telescope requirements...
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug '/home/mpaulson/personal/telescope.nvim'
-
-"  I AM SO SORRY FOR DOING COLOR SCHEMES IN MY VIMRC, BUT I HAVE
-"  TOOOOOOOOOOOOO
-
-Plug 'colepeters/spacemacs-theme.vim'
-Plug 'sainnhe/gruvbox-material'
-Plug 'phanviet/vim-monokai-pro'
-Plug 'flazz/vim-colorschemes'
-Plug 'chriskempson/base16-vim'
-
 call plug#end()
 
 
@@ -207,29 +187,7 @@ fun! ThePrimeagen_LspHighlighter()
 endfun
 
 com! SetLspVirtualText call ThePrimeagen_LspHighlighter()
-imap jj <Esc>
-let mapleader = ""
-filetype plugin indent on
-set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
-set nu
-set nowrap
-set smartcase
-set noswapfile
-set nobackup
-set undodir=~/.vim/undodir
-set undofile
-set incsearch
-set encoding=utf-8
-syntax on
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
-set cursorline
-set undofile
-hi CursorLine cterm=none
+
 
 if &term =~ "xterm\\|rxvt"
   " use an orange cursor in insert mode
@@ -255,6 +213,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
+Plug 'vim-scripts/Rainbow-Parenthesis'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
@@ -266,6 +225,33 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'townk/vim-autoclose'
 Plug 'sheerun/vim-polyglot'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+Plug 'tjdevries/nlua.nvim'
+
+Plug 'tweekmonster/gofmt.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-utils/vim-man'
+Plug 'mbbill/undotree'
+Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'stsewd/fzf-checkout.vim'
+Plug 'vuciv/vim-bujo'
+Plug 'tpope/vim-dispatch'
+Plug '/home/mpaulson/personal/vim-apm'
+Plug 'theprimeagen/vim-be-good'
+Plug 'gruvbox-community/gruvbox'
+
+
+
+Plug 'colepeters/spacemacs-theme.vim'
+Plug 'sainnhe/gruvbox-material'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'flazz/vim-colorschemes'
+Plug 'chriskempson/base16-vim'
+
+
 
 Plug 'w0rp/ale'
 call plug#end()
